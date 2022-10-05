@@ -1,0 +1,3 @@
+train:
+  network: customnet
+  epochs: 2

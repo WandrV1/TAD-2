@@ -1,0 +1,32 @@
+stages:
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - data/raw
+    - src/prepare.py
+    outs:
+    - data/prepared
+  train:
+    cmd: python src/train.py
+    deps:
+    - data/prepared/data_list.json
+    - data/raw
+    - src/models.py
+    - src/train.py
+    - src/dataset.py
+    params:
+    - train.network
+    - train.epochs
+    outs:
+    - data/weights
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+      - data/raw
+      - data/prepared/data_list.json
+      - data/weights/Best_Acc.pth.gz
+      - src/models.py
+      - src/dataset.py
+    metrics:
+      - scores.json:
+          cache: false
