@@ -16,7 +16,7 @@ def get_data_list(paths, folders):
 
 
 data_list = {
-    "train": get_data_list(["data/raw/training"], ["non_food", "food"]),
+    "train": get_data_list(["data/raw/training", "data/raw/augmented"], ["non_food", "food"]),
     "val": get_data_list(["data/raw/validation"], ["non_food", "food"]),
     "eval": get_data_list(["data/raw/evaluation"], ["non_food", "food"])
 }

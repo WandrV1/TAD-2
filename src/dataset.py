@@ -41,6 +41,7 @@ def get_dataloader(data_list_path, batch_size, mode):
         val_list = data_list['val']
 
         train_dataset = FoodOrNotDataset(train_list, preprocess)
+        print(f"Train dataset size: {len(train_dataset)}")
         val_dataset = FoodOrNotDataset(val_list, preprocess)
 
         train_loader = DataLoader(train_dataset, batch_size, shuffle=True)
