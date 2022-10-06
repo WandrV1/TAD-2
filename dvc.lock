@@ -26,8 +26,8 @@ stages:
       size: 452697142
       nfiles: 5000
     - path: src/dataset.py
-      md5: ce72beda03a629d11c5dc91626cbde92
-      size: 1610
+      md5: 9a08d27ba51674feac3596ce05d08df2
+      size: 1670
     - path: src/models.py
       md5: 7c1c24db621c00a8425caef600c5c98c
       size: 2463
@@ -36,11 +36,11 @@ stages:
       size: 2796
     params:
       params.yaml:
-        train.epochs: 2
-        train.network: custom
+        train.epochs: 10
+        train.network: customnet
     outs:
     - path: data/weights
-      md5: 8d0527e1d2c660c5180d399be3c0fd04.dir
+      md5: b8991af675220b62e2de64d790e5cfa9.dir
       size: 43038005
       nfiles: 1
   evaluate:
@@ -54,15 +54,15 @@ stages:
       size: 452697142
       nfiles: 5000
     - path: data/weights/Best_Acc.pth.gz
-      md5: bdb7e90d9361baf464a5d9014a1156cd
+      md5: 224f9dd52b4d48dc10ed809f8d043abe
       size: 43038005
     - path: src/dataset.py
-      md5: ce72beda03a629d11c5dc91626cbde92
-      size: 1610
+      md5: 9a08d27ba51674feac3596ce05d08df2
+      size: 1670
     - path: src/models.py
       md5: 7c1c24db621c00a8425caef600c5c98c
       size: 2463
     outs:
     - path: scores.json
-      md5: 2ac0f13d8f8c0c2baae53f9637bc9e70
+      md5: 2f815d0d01ed06b4c00828590f709fbb
       size: 18
