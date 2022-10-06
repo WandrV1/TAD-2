@@ -27,6 +27,8 @@ stages:
       - data/weights/Best_Acc.pth.gz
       - src/models.py
       - src/dataset.py
+    params:
+      - train.network
     metrics:
       - scores.json:
           cache: false
