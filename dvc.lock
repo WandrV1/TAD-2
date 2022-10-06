@@ -37,11 +37,11 @@ stages:
     params:
       params.yaml:
         train.epochs: 2
-        train.network: resnet18
+        train.network: resnet50
     outs:
     - path: data/weights
-      md5: 39f6e4497e096645caadaff1ecde53ea.dir
-      size: 45047945
+      md5: e0d01887cb4dee47fc54f4f430ec8ba9.dir
+      size: 98809849
       nfiles: 1
   evaluate:
     cmd: python src/evaluate.py
@@ -54,8 +54,8 @@ stages:
       size: 452697142
       nfiles: 5000
     - path: data/weights/Best_Acc.pth.gz
-      md5: 85667c421a5891ff1a167ca9b9eaab5f
-      size: 45047945
+      md5: ad7734cc03515da872455af0c2edc4e5
+      size: 98809849
     - path: src/dataset.py
       md5: 9a08d27ba51674feac3596ce05d08df2
       size: 1670
@@ -64,8 +64,8 @@ stages:
       size: 2463
     params:
       params.yaml:
-        train.network: resnet18
+        train.network: resnet50
     outs:
     - path: scores.json
-      md5: bb68dfa00c1001c859a59d8ba94caf4a
+      md5: 9affe9a7ff2b2f3e3ace197f1e633baa
       size: 18
